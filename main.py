@@ -26,7 +26,7 @@ app.add_middleware(
 # ✅ CORRECT: Railway environment variables
 
 GEMINI_API_KEY = os.environ.get("Gemini_Key")
-IMGBB_API_KEY = os.environ.get("ImgBB_Key")
+IMGBB_API = os.environ.get("ImgBB_Key")
 
 if not GEMINI_API_KEY:
     raise RuntimeError("❌ Missing Railway env variable: Gemini_Key")
@@ -39,7 +39,7 @@ if not IMGBB_API_KEY:
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 # imgBB API key
-IMGBB_API_KEY = IMGBB_API_KEY
+IMGBB_API_KEY = IMGBB_API
 
 # ------------------------------
 # Helper: Upload image to imgBB
