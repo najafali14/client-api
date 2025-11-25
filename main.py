@@ -22,11 +22,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ✅ CORRECT: Railway environment variables
+GEMINI_API_KEY = os.getenv("Gemini_Key")
+IMGBB_API_KEY = os.getenv("ImgBB_Key")
+
 # Gemini client
-client = genai.Client(api_key=Gemini_Key)
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 # imgBB API key
-IMGBB_API_KEY = ImgBB_Key
+IMGBB_API_KEY = IMGBB_API_KEY
 
 # ------------------------------
 # Helper: Upload image to imgBB
