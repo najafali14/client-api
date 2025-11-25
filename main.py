@@ -10,6 +10,7 @@ import base64
 import uuid
 from rembg import remove
 import time
+import os
 
 app = FastAPI()
 
