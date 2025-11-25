@@ -1,5 +1,6 @@
 from fastapi import FastAPI, UploadFile, File  # type: ignore
 from fastapi.responses import JSONResponse  # type: ignore
+from fastapi.middleware.cors import CORSMiddleware  # type: ignore
 from google import genai
 from google.genai import types  # type: ignore
 from PIL import Image
@@ -10,7 +11,14 @@ import uuid
 from rembg import remove  # type: ignore # rembg import karo
 
 app = FastAPI()
-
+# CORS middleware for Shopify
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # Gemini client
 client = genai.Client(api_key="AIzaSyDZHArLMbWTNAoTtcxUyt5-Q2BuK8vTZro")
 
