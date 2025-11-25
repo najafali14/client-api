@@ -23,17 +23,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ✅ CORRECT: Railway environment variables
+# ✅ Correct - Simple environment variable access
+GEMINI_API_KEY = os.getenv("Gemini_Key")
+IMGBB_API = os.getenv("ImgBB_Key")
 
-GEMINI_API_KEY = os.environ.get("Gemini_Key")
-IMGBB_API = os.environ.get("ImgBB_Key")
-
-if not GEMINI_API_KEY:
-    raise RuntimeError("❌ Missing Railway env variable: Gemini_Key")
-
-if not IMGBB_API_KEY:
-    raise RuntimeError("❌ Missing Railway env variable: ImgBB_Key")
-
+print(f"Gemini Key: {GEMINI_API_KEY}")
+print(f"ImgBB Key: {IMGBB_API_KEY}")
 
 # Gemini client
 client = genai.Client(api_key=GEMINI_API_KEY)
