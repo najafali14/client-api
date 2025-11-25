@@ -23,10 +23,10 @@ app.add_middleware(
 )
 
 # Gemini client
-client = genai.Client(api_key="AIzaSyDZHArLMbWTNAoTtcxUyt5-Q2BuK8vTZro")
+client = genai.Client(api_key=Gemini_Key)
 
 # imgBB API key
-IMGBB_API_KEY = "8bc5018a821c22732b70c15045f6f903"
+IMGBB_API_KEY = ImgBB_Key
 
 # ------------------------------
 # Helper: Upload image to imgBB
