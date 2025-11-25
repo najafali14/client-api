@@ -28,7 +28,7 @@ GEMINI_API_KEY = os.getenv("Gemini_Key")
 IMGBB_API = os.getenv("ImgBB_Key")
 
 print(f"Gemini Key: {GEMINI_API_KEY}")
-print(f"ImgBB Key: {IMGBB_API_KEY}")
+print(f"ImgBB Key: {IMGBB_API}")
 
 # Gemini client
 client = genai.Client(api_key=GEMINI_API_KEY)
