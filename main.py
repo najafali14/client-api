@@ -24,8 +24,9 @@ app.add_middleware(
 )
 
 # ✅ Correct - Simple environment variable access
-GEMINI_API_KEY = ${{shared.Gemini_Key}}
-IMGBB_API = ${{shared.ImgBB_Key}}
+# Get API keys
+GEMINI_API_KEY = os.getenv("Gemini_Key")
+IMGBB_API = os.getenv("ImgBB_Key")
 
 print(f"Gemini Key: {GEMINI_API_KEY}")
 print(f"ImgBB Key: {IMGBB_API}")
