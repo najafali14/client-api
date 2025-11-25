@@ -17,11 +17,7 @@ app = FastAPI(title="Shopify Image Enhancement API")
 # Proper CORS for Shopify
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://*.myshopify.com",
-        "http://localhost:3000",
-        "http://localhost:3001"
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
@@ -80,7 +76,7 @@ def remove_background(pil_image):
 def generate_image(prompt, input_image):
     try:
         response = client.models.generate_content(
-            model="gemini-2.0-flash-exp",
+            model="gemini-2.5-flash-image",
             contents=[prompt, input_image]
         )
         
