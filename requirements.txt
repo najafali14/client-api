@@ -6,4 +6,5 @@ google-genai==0.3.0
 python-multipart
 rembg==2.0.68
 onnxruntime==1.23.2
+os
 uvicorn
