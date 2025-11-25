@@ -15,8 +15,9 @@ app = FastAPI()
 client = genai.Client(api_key="AIzaSyDZHArLMbWTNAoTtcxUyt5-Q2BuK8vTZro")
 
 # imgBB API key
-IMGBB_API_KEY = "8bc5018a821c22732b70c15045f6f903"
 
+IMGBB_API_KEY = "8bc5018a821c22732b70c15045f6f903"
+# use own imgbb api key so visit : https://imgbb.com/    and create account
 # ------------------------------
 # Helper: Upload image to imgBB
 # ------------------------------
