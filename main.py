@@ -23,10 +23,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ✅ Correct - Simple environment variable access
+# environment variable
 # Get API keys
-GEMINI_API_KEY = os.getenv("Gemini_Key")
-IMGBB_API = os.getenv("ImgBB_Key")
+GEMINI_API_KEY = "your api key"                # you can also add by environment variable
+IMGBB_API = "your api key"  # to get ImgBB Api visit https://api.imgbb.com/ . this is a free images hosting platform that also provide url
 
 # Gemini client
 client = genai.Client(api_key=GEMINI_API_KEY)
